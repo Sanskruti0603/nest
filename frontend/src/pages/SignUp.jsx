@@ -115,9 +115,10 @@ const SignUp = () => {
     try {
       setStatus("loading");
       const response = await axios.post(
-        "http://localhost:8080/api/user/register",
+        `${import.meta.env.VITE_BACKEND_URL}/api/user/register`,
         values
       );
+
       console.log(response);
 
       await new Promise((res) => setTimeout(res, 2500));

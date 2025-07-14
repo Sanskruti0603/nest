@@ -40,7 +40,7 @@ const AddAccount = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/account/add-account",
+        `${import.meta.env.VITE_BACKEND_URL}/api/account/add-account`,
         {
           account_type: accountType,
           amount: 0,

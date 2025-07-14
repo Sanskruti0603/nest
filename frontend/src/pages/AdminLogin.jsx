@@ -22,7 +22,7 @@ const AdminLogin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/admin/login",
+        `${import.meta.env.VITE_BACKEND_URL}/api/admin/login`,
         values
       );
       console.log(response);

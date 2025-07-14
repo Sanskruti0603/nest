@@ -43,7 +43,7 @@ const ApplyLoan = ({ setShowModel }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/loan/apply-loan",
+        `${import.meta.env.VITE_BACKEND_URL}/api/loan/apply-loan`,
         {
           amount,
           durationMonths: duration,
