@@ -14,10 +14,10 @@ const PORT = process.env.PORT || 6001;
 
 app.use(express.json());
 
-// app.use(cors());
+app.use(cors());
 app.use(
   cors({
-    origin: "https://your-vercel-app.vercel.app", 
+    origin: ["http://localhost:4173", "https://your-vercel-domain.vercel.app"],
     credentials: true,
   })
 );
