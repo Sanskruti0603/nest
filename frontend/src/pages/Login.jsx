@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { authSliceActions } from "../../../../book-store/frontend/src/store/auth";
+import { authSliceActions } from "../store/authSlice";
 import StatusBadge from "../components/StatusBadge";
 
 const Login = () => {
@@ -91,8 +91,7 @@ const Login = () => {
         <motion.div
           className="p-6 flex flex-col justify-center w-full md:w-2/6 bg-gray-200 mt-40 mr-10 rounded-xl mb-10"
           initial={{ opacity: 0, y: 40 }}
-         animate={{ opacity: 1, y: 0 }}
-
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           // viewport={{ once: true }}
         >
