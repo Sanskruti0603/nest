@@ -14,7 +14,13 @@ const PORT = process.env.PORT || 6001;
 
 app.use(express.json());
 
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({
+    origin: "https://your-vercel-app.vercel.app", 
+    credentials: true,
+  })
+);
 app.use("/api/user", userRoute);
 app.use("/api/atm", atmRoute);
 app.use("/api/fd", fixDepositRoute);

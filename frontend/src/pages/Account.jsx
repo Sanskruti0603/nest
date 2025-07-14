@@ -33,7 +33,7 @@ const Account = () => {
   const fetchAccounts = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/account/get-all-account",
+        "https://nestcash-api.onrender.com/api/account/get-all-account",
         {},
         { headers }
       );
@@ -55,7 +55,7 @@ const Account = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/account/add-money",
+        "https://nestcash-api.onrender.com/api/account/add-money",
         {
           account_no: selectedAccount._id,
           amount,
@@ -73,7 +73,7 @@ const Account = () => {
         handler: async function (response) {
           try {
             const verifyRes = await axios.post(
-              "http://localhost:8080/api/account/verify-payment",
+              "https://nestcash-api.onrender.com/api/account/verify-payment",
               {
                 razorpay_order_id: response.razorpay_order_id,
                 razorpay_payment_id: response.razorpay_payment_id,

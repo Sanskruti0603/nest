@@ -75,7 +75,7 @@ const AddAccount = () => {
   const handleRazorpayPayment = async (accountId, amount) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/account/add-money",
+        "https://nestcash-api.onrender.com/api/account/add-money",
         {
           account_no: accountId,
           amount,
@@ -93,7 +93,7 @@ const AddAccount = () => {
         handler: async function (response) {
           try {
             const verifyRes = await axios.post(
-              "http://localhost:8080/api/account/verify-payment",
+              "https://nestcash-api.onrender.com/api/account/verify-payment",
               {
                 razorpay_order_id: response.razorpay_order_id,
                 razorpay_payment_id: response.razorpay_payment_id,
@@ -134,14 +134,13 @@ const AddAccount = () => {
         <div className="bg-white shadow-xl rounded-2xl w-full max-w-md p-6 border border-gray-200">
           <div className="text-center mb-6">
             <h2 className="text-3xl font-bold text-indigo-700">
-               Open a New Account
+              Open a New Account
             </h2>
             <p className="text-sm text-gray-500 mt-1">
               Select your account type and initial deposit to get started.
             </p>
           </div>
 
-          
           <div className="mb-5">
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Account Type
