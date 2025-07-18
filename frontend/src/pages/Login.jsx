@@ -39,9 +39,8 @@ const Login = () => {
       setStatus("loading");
 
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/user/login`,
-        values,
-        { withCredentials: true }
+        `${import.meta.env.VITE_API_URL}/api/user/login`,
+        values
       );
 
       await new Promise((res) => setTimeout(res, 2500));
@@ -183,7 +182,7 @@ const Login = () => {
                     setForgotStatus("loading");
                     const res = await axios.post(
                       `${
-                        import.meta.env.VITE_BACKEND_URL
+                        import.meta.env.VITE_API_URL
                       }/api/user/forgot-password`,
                       {
                         email: forgotEmail,
