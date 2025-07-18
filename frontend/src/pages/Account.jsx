@@ -33,7 +33,7 @@ const Account = () => {
   const fetchAccounts = async () => {
     try {
       const res = await axios.post(
-        "https://nestcash-api.onrender.com/api/account/get-all-account",
+        `${import.meta.env.VITE_BACKEND_URL}/api/account/get-all-account`,
         {},
         { headers }
       );
