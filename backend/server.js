@@ -15,7 +15,8 @@ const PORT = process.env.PORT || 6001;
 app.use(express.json());
 
 const corsOptions = {
-  origin: ["http://localhost:4173", "https://nestcash.vercel.app"],
+  origin: ["http://localhost:4173", "https://nestcash.vercel.app", "https://nest-two-green.vercel.app",
+    "https://nest-i9y3.vercel.app"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
