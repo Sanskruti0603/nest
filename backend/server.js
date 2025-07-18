@@ -17,12 +17,14 @@ app.use(express.json());
 const corsOptions = {
   origin: ["http://localhost:4173", "https://nestcash.vercel.app"],
   credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 app.use(cors(corsOptions));
 
-
-
+// ✅ Preflight handling
+// app.options("/*", cors(corsOptions));
 app.use("/api/user", userRoute);
 app.use("/api/atm", atmRoute);
 app.use("/api/fd", fixDepositRoute);

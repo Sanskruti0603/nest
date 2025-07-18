@@ -16,7 +16,7 @@ const Login = () => {
 
   const [values, setValues] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState(null); 
+  const [status, setStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,7 +40,8 @@ const Login = () => {
 
       const response = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/api/user/login`,
-        values
+        values,
+        { withCredentials: true }
       );
 
       await new Promise((res) => setTimeout(res, 2500));
@@ -93,7 +94,6 @@ const Login = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-         
         >
           <div className="w-full max-w-md mx-auto text-black">
             <h2 className="text-center font-bold text-3xl mb-4">Login</h2>
@@ -182,7 +182,9 @@ const Login = () => {
                   try {
                     setForgotStatus("loading");
                     const res = await axios.post(
-                      `${import.meta.env.VITE_BACKEND_URL}/api/user/forgot-password`,
+                      `${
+                        import.meta.env.VITE_BACKEND_URL
+                      }/api/user/forgot-password`,
                       {
                         email: forgotEmail,
                       }
