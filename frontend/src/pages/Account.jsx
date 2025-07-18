@@ -55,7 +55,7 @@ const Account = () => {
 
     try {
       const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/account/add-money`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/account/add-money`,
         {
           account_no: selectedAccount._id,
           amount,
@@ -73,7 +73,7 @@ const Account = () => {
         handler: async function (response) {
           try {
             const verifyRes = await axios.post(
-              `${import.meta.env.VITE_API_URL}/api/account/verify-payment`,
+              `${import.meta.env.VITE_BACKEND_URL}/api/account/verify-payment`,
               {
                 razorpay_order_id: response.razorpay_order_id,
                 razorpay_payment_id: response.razorpay_payment_id,
